@@ -9,6 +9,10 @@ from Script import script
 from pyrogram.errors import ChatAdminRequired
 
 """-----------------------------------------https://t.me/GetTGLink/4179 --------------------------------------"""
+BTN = [[
+          InlineKeyboardButton('🅒🅡🅔🅐🅣🅞🅡', url=f'https://t.me/OO7ROBot')
+      ]]
+
 
 @Client.on_message(filters.new_chat_members & filters.group)
 async def save_group(bot, message):
@@ -22,11 +26,11 @@ async def save_group(bot, message):
         if message.chat.id in temp.BANNED_CHATS:
             # Inspired from a boat of a banana tree
             buttons = [[
-                InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+                InlineKeyboardButton('🅒🅡🅔🅐🅣🅞🅡', url=f'https://t.me/OO7ROBot')
             ]]
-            reply_markup=InlineKeyboardMarkup(buttons)
+            reply_markup=InlineKeyboardMarkup(BTN)
             k = await message.reply(
-                text='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
+                text='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact my creator..</b>',
                 reply_markup=reply_markup,
             )
 
@@ -40,9 +44,9 @@ async def save_group(bot, message):
             InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
             InlineKeyboardButton('📢 Updates', url='https://t.me/TeamEvamaria')
         ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
+        reply_markup=InlineKeyboardMarkup(BTN)
         await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
+            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️</b>",
             reply_markup=reply_markup)
     else:
         for u in message.new_chat_members:
@@ -51,7 +55,7 @@ async def save_group(bot, message):
                     await (temp.MELCOW['welcome']).delete()
                 except:
                     pass
-            temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
+            temp.MELCOW['welcome'] = await message.reply(f"<b>HEY 👋, {u.mention}, WELCOME TO {message.chat.title} \n\nᴅᴏɴᴛ ᴡᴀsᴛᴇ ᴛɪᴍᴇ ᴛᴇʟʟ ᴍᴇ ᴡʜɪᴄʜ ᴍᴏᴠɪᴇ,sᴇʀɪs ʏᴏᴜ ᴡᴀɴᴛ...?</b>")
 
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
@@ -67,7 +71,7 @@ async def leave_a_chat(bot, message):
         buttons = [[
             InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
         ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
+        reply_markup=InlineKeyboardMarkup(BTN)
         await bot.send_message(
             chat_id=chat,
             text='<b>Hello Friends, \nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.</b>',
@@ -105,7 +109,7 @@ async def disable_chat(bot, message):
         buttons = [[
             InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
         ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
+        reply_markup=InlineKeyboardMarkup(BTN)
         await bot.send_message(
             chat_id=chat_, 
             text=f'<b>Hello Friends, \nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.</b> \nReason : <code>{reason}</code>',
