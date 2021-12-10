@@ -1,12 +1,11 @@
-FROM python:3.8-slim-buster
+FROM debian:latest
 
 RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
-
+RUN apt install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
 RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /EvaMaria
+RUN git clone https://github.com/EnteRepo/EvaMaria
+RUN cd EvaMaria
 WORKDIR /EvaMaria
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+RUN pip3 install -U -r requirements.txt
+CMD python3 bot.py
