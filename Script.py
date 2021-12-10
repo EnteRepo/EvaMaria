@@ -115,8 +115,8 @@ This module only works for my admins
 
 <b>👩‍💻 Total Chats</b> : <code>{}</code>
 
-<b>📊 Used Storage</b> : <code>{}</code> MB
-<b>🆓 Free Storage</b> : <code>{}</code> MB
+<b>📊 Used Storage</b> : <code>{}</code>
+<b>🆓 Free Storage</b> : <code>{}</code>
     
 <b>© @SiriTGbot</b>"""
     LOG_TEXT_G = """#NewGroup
