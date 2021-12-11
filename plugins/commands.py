@@ -42,7 +42,7 @@ async def help(client, message):
     
 # ---------- End -------------#
 SB = [[
-            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/siritgbot?startgroup=true')
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/SiriTGbot?startgroup=true')
             ],[
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
             InlineKeyboardButton('📢 Uᴘᴅᴀᴛᴇs', url='https://t.me/mytestbotz')
@@ -62,7 +62,7 @@ async def start(client, message):
                 InlineKeyboardButton('🤖 Updates', url='https://t.me/mytestbotz'),
             #],
            # [
-                InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/siritgbot?start=help"),
+                InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/SiriTGbot?start=help"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
