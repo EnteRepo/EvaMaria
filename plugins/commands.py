@@ -48,10 +48,10 @@ SB = [[
             InlineKeyboardButton('📢 Uᴘᴅᴀᴛᴇs', url='https://t.me/mytestbotz')
             ],[
             InlineKeyboardButton('⚙️ Hᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton (('📝 BᴏᴛLɪsᴛs', url='https://t.me/mybotzlist')
+            InlineKeyboardButton('📝 BᴏᴛLɪsᴛs', url='https://t.me/mybotzlist')
             ],[
             InlineKeyboardButton('🤖 Aʙᴏᴜᴛ', callback_data='about'),
-            InlineKeyboardButton()
+            InlineKeyboardButton('⛔️ Cʟᴏsᴇ', callback_data='close_data')
         ]]
 
 @Client.on_message(filters.command("start"))
@@ -86,7 +86,7 @@ async def start(client, message):
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
+        reply_markup = InlineKeyboardMarkup(SB)
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -127,7 +127,7 @@ async def start(client, message):
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
+        reply_markup = InlineKeyboardMarkup(SB)
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
