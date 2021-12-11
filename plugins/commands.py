@@ -16,9 +16,7 @@ logger = logging.getLogger(__name__)
 #help
 HPIC = "https://telegra.ph/file/f62975b78158b7c5b2468.jpg"
 
-@Client.on_message(filters.command("help"))
-async def help(client, message):
-    buttons = [[
+HB = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
             InlineKeyboardButton('Auto Filter', callback_data='autofilter')
             ],[
@@ -28,9 +26,13 @@ async def help(client, message):
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔮 Status', callback_data='stats')
         ]]
+
+@Client.on_message(filters.command("help"))
+async def help(client, message):
+    
     #
     
-    reply_markup = InlineKeyboardMarkup(buttons)
+    reply_markup = InlineKeyboardMarkup(HB)
     await message.reply_photo(
         photo=HPIC,
         caption=script.HELP_TXT,
@@ -112,12 +114,12 @@ async def start(client, message):
             btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"checksub#{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!** \n __No Costs, 100% Free to Join__",
+            text="**Please Join My Updates Channel to use this Bot!** \n __You don't need to Pay Anything, 100% Free to Join__",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
         return
-    if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
+    if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help2"]:
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/siritgbot?startgroup=true')
             ],[
@@ -135,6 +137,18 @@ async def start(client, message):
             parse_mode='html'
         )
         return
+    
+    if len(message.command) ==2 and message.command[1] in ["help"]:
+        reply_markup = InlineKeyboardMarkup(HB)
+        await message.reply_photo(
+            photo=HPIC,
+            caption=script.HELP_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        return
+    
+    
     file_id = message.command[1]
     files_ = await get_file_details(file_id)
     if not files_:
