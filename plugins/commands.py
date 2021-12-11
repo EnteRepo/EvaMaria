@@ -13,6 +13,35 @@ from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
 
+#help
+HPIC = "https://telegra.ph/file/f62975b78158b7c5b2468.jpg"
+
+@Client.on_message(filters.command("help"))
+async def start(client, message):
+    buttons = [[
+            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
+            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
+            ],[
+            InlineKeyboardButton('Connection', callback_data='coct'),
+            InlineKeyboardButton('Extra Mods', callback_data='extra')
+            ],[
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('🔮 Status', callback_data='stats')
+        ]]
+    #
+    
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await message.reply_photo(
+        photo=HPIC,
+        caption=script.HELP_TXT,
+        reply_markup=reply_markup,
+        parse_mode='html'
+    )
+    
+    
+    
+# ---------- End -------------#
+
 @Client.on_message(filters.command("start"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
