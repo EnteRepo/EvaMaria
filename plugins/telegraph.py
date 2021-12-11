@@ -56,14 +56,14 @@ async def telegraph(client, message):
     except Exception as document:
         await message.reply_text(message, text=document)
     else:
-        buttons = [[
+        """"buttons = [[
                 InlineKeyboardButton('🔗 Telegraph Link', url=f'https://telegra.ph{response[0]}')
             ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
+        reply_markup=InlineKeyboardMarkup(buttons)"""
         await message.reply(
             f"`https://telegra.ph{response[0]}`",
-            disable_web_page_preview=True,
-            reply_markup=reply_markup
+            disable_web_page_preview=True
+            #reply_markup=reply_markup
         )
     finally:
         shutil.rmtree(
