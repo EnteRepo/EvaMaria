@@ -41,6 +41,18 @@ async def help(client, message):
     
     
 # ---------- End -------------#
+SB = [[
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/siritgbot?startgroup=true')
+            ],[
+            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('📢 Uᴘᴅᴀᴛᴇs', url='https://t.me/mytestbotz')
+            ],[
+            InlineKeyboardButton('⚙️ Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton (('📝 BᴏᴛLɪsᴛs', url='https://t.me/mybotzlist')
+            ],[
+            InlineKeyboardButton('🤖 Aʙᴏᴜᴛ', callback_data='about'),
+            InlineKeyboardButton()
+        ]]
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
