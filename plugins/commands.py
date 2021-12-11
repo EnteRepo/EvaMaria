@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 #help
 HPIC = "https://telegra.ph/file/f62975b78158b7c5b2468.jpg"
 
-@Client.on_message(filters.command("helps"))
+@Client.on_message(filters.command("help"))
 async def help(client, message):
     buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
@@ -117,7 +117,7 @@ async def start(client, message):
             parse_mode="markdown"
             )
         return
-    if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
+    if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help2"]:
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/siritgbot?startgroup=true')
             ],[
