@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 HPIC = "https://telegra.ph/file/f62975b78158b7c5b2468.jpg"
 
 @Client.on_message(filters.command("help"))
-async def start(client, message):
+async def help(client, message):
     buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
             InlineKeyboardButton('Auto Filter', callback_data='autofilter')
