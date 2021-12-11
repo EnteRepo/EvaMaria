@@ -1,5 +1,6 @@
 import os
 import shutil
+import telegraph
 from pyrogram import Client, filters
 from telegraph import upload_file
 from pyrogram.types import Message
