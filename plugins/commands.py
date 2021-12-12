@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 #help
 HPIC = "https://telegra.ph/file/f62975b78158b7c5b2468.jpg"
 
-@Client.on_message(filters.command("help"))
+@Client.on_message(filters.command("help", "help@uptoUtubebot"))
 async def help(client, message):
     buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
@@ -54,7 +54,7 @@ SB = [[
             InlineKeyboardButton('⛔️ Cʟᴏsᴇ', callback_data='close_data')
         ]]
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("start", "start@uptoUtubebot"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
