@@ -109,14 +109,14 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
-    STATUS_TXT = """<b>📚 Total Files</b> : <code>{}</code>
+    STATUS_TXT = """<b>📚 Tᴏᴛᴀʟ Fɪʟᴇs</b> : <code>{}</code>
     
-<b>👤 Total Users</b> : <code>{}</code>
+<b>👤 Tᴏᴛᴀʟ Usᴇʀs</b> : <code>{}</code>
 
-<b>👩‍💻 Total Chats</b> : <code>{}</code>
+<b>👩‍💻 Tᴏᴛᴀʟ Cʜᴀᴛs</b> : <code>{}</code>
 
-<b>📊 Used Storage</b> : <code>{}</code>
-<b>🆓 Free Storage</b> : <code>{}</code>
+<b>Sᴛᴏʀᴀɢᴇ {}</b>
+<b>📊 Used</b> : <code>{}</code> | <b>🆓 Free</b> : <code>{}</code>
     
 <b>© @SiriTGbot</b>"""
     LOG_TEXT_G = """#NewGroup
