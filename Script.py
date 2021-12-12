@@ -116,7 +116,7 @@ This module only works for my admins
 <b>👩‍💻 Tᴏᴛᴀʟ Cʜᴀᴛs</b> : <code>{}</code>
 
 <b>Sᴛᴏʀᴀɢᴇ {}</b>
-<b>📊 Used</b> : <code>{}</code> | <b>🆓 Free</b> : <code>{}</code>
+<b>📊 Used : {} | <b>🆓 {}</b>
     
 <b>© @SiriTGbot</b>"""
     LOG_TEXT_G = """#NewGroup
