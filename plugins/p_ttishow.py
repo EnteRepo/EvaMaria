@@ -146,9 +146,12 @@ async def get_ststs(bot, message):
     files = await Media.count_documents()
     size = await db.get_db_size()
     free = 536870912 - size
+    total_db = size + free
+    total_db = get_size(total_db)
     size = get_size(size)
     free = get_size(free)
-    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
+    
+    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, total_db, size, free))
 
 
 # a function for trespassing into others groups, Inspired by a Vazha
